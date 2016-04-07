@@ -1,3 +1,3 @@
-#test for git
-wolegequ
-1111
+#installtest for git
+woinstalllegequ
+111install1install
