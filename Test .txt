@@ -1,3 +1,10 @@
-#installtest for git
-woinstalllegequ
-111install1install
+oracle删除数据后，表空间不释放，dbf文件越来越大，可以使用：
+
+
+ 查询当前用户数据占用空间
+SQL> select sum(bytes)/1024/1024||'M' from user_segments;
+
+ DBA账户，根据上面的结果，来缩小表空间
+SQL> ALTER DATABASE DATAFILE 'C:\oracle\product\10.2.0\oradata\orcl\USERS01.DBF' RESIZE 1G;
+
+如果报错：“ORA-03297: 文件包含在请求的 RESIZE 值以外使用的数据”，说明1G不够，加大RESIZE值再次执行。注意预留空间
